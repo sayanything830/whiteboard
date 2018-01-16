@@ -4,10 +4,17 @@
 const solution = module.exports = {};
 
 solution.highScores = arr => {
-  for(let i in arr) {
-    if(typeof i !== 'number') return null;
+  if(Array.isArray(arr) === false) return null;
+
+  if(arr.length === 0) return null;
+
+  if(arr.length === 1) {
+    return {
+      highest: arr[0],
+      secondHighest: null,
+    };
   }
-  if(!arr.length) return null;
+
   arr.sort((a, b) => a - b);
   let obj = {
     highest: arr[arr.length - 1],
