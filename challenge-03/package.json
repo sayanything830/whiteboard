@@ -1,0 +1,17 @@
+{
+  "name": "challenge-03",
+  "version": "1.0.0",
+  "description": "whiteboard challenge day 3",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "melanie downing",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.1.2"
+  }
+}
