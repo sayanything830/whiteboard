@@ -2,7 +2,7 @@
 
 const solution = module.exports = {};
 
-// Option 1 Code //
+// *****Option 1 Code ***** //
 solution.highScoreOne = arr => { //make a function that takes in an array
   //if there is no argument, argument is not an array, array is empty, return null
   if(!arr || Array.isArray(arr) === false || arr.length === 0) return null;
@@ -26,7 +26,7 @@ solution.highScoreOne = arr => { //make a function that takes in an array
   return obj; // return defined object literal
 };
 
-// Option 2 Code
+// *****Option 2 Code***** //
 solution.highScoreTwo = arr => { // make a function that takes in an array
   //if there is no argument, argument is not an array, array is empty, return null
   if (!arr || !Array.isArray(arr) || arr.length === 0) return null;
