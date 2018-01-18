@@ -12,5 +12,6 @@ intersect.intersector = function(arr1, arr2) {
       }
     }
   }
+  if(arr3.length === 0) return ['there were no matches'];
   return arr3;
 };
