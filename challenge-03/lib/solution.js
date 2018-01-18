@@ -20,4 +20,5 @@ train.passengerCount = function(obj) {
     car = car.next;
     train.passengerCount(car);
   }
+  if(car.next === null) return passenger;
 };
