@@ -35,7 +35,7 @@ describe('Solution Module', function() {
 
     it('should return the valid middle node', () => {
       expect(solution.findMiddleNode(sllOne)).toEqual({ value: 'b', next: { value: 'c', next: null } });
-      console.log(solution.findMiddleNode(sllOne));
+      // console.log(solution.findMiddleNode(sllOne));
     });
     it('should return null if two keys do not exist per node', () => {
       expect(solution.findMiddleNode(sllTwo)).toBeNull();
