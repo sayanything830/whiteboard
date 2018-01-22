@@ -15,6 +15,6 @@ describe('Solution Module', function() {
     });
     it('should return null if less than 2 arguments are passed in', () => {
       expect(solution.loop()).toBeNull();
-    })
+    });
   });
 });
