@@ -1,7 +1,7 @@
 'use strict';
 
-// takes in a single link list argument
-module.exports = function(sll) {
+// Big O notation: Worst case O(n), iterates through list once
+module.exports = function(sll) {// takes in a single link list argument
 
   // invalid arguments
   if(!sll) return null;
