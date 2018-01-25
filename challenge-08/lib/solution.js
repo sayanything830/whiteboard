@@ -1,76 +1,33 @@
+
 'use strict';
 
-const SLL = require('./sll.js');
+const SLL = require('./sll');
 
 
-module.exports = function(sll1, sll2) {
-  let table = {};
-  let resultList = new SLL();
-  let currentNode = arr.head;
+module.exports = function(sll1, sll2) { //Big O: worst case O(n), iterates through lists twice, but not nested
+
+  // invalid entries
+  if (!sll1 || !sll2 || typeof sll1 !== 'object' || typeof sll2 !== 'object') return null;
+
+  let table = {}; // will pe fill with first list
+  let resultList = new SLL(); // new linked list
+  let currentNode = sll1.head; // pointer for list one
+
+  // Creates object based on first list's values
   while (currentNode) {  //Big O is O(n)
     table[currentNode.value] = true;
     currentNode = currentNode.next;
   }
-  currentNode = arr1.head;
+  // pointer now on list two
+  currentNode = sll2.head;
+
+  // iterates through second list and checks if value exists in object 'table'
   while (currentNode) {  //Big O is O(n)
-    if (table[currentNode.value]) {
+    if (table[currentNode.value]) { // if value is in table, add to new list
       resultList.insertEnd(currentNode.value);
     }
     currentNode = currentNode.next;
   }
-  console.log(resultList);
+  // Return new list
   return resultList;
-}
-
-//   let table = {};
-//   let resultList;
-//   let curr = sll1.head;
-//   let list = new SLL()
-
-//   while(curr) {
-//     if(!table[curr.value]) table[curr.value] = true;
-//     curr = curr.next;
-//   }
-
-//   curr = sll2.head;
-//   while(curr) {
-//     if(table[curr.value]){
-//       //add current node to constructor and add to resultList
-//       // list(curr)
-//     }
-//     curr = curr.next;
-//   }
-//   return resultList;
-// }
-
-
-
-let test = new SLL();
-test.insertEnd(9);
-test.insertEnd(5);
-test.insertEnd(7);
-
-let test1 = new SLL();
-test1.insertEnd(5);
-test1.insertEnd(2);
-test1.insertEnd(7);
-
-
-// doThing.testNode = function(arr, arr1) {
-//   let table = {};
-//   let resultList = new SLL();
-//   let currentNode = arr.head;
-//   while (currentNode) {  //Big O is O(n)
-//     table[currentNode.value] = true;
-//     currentNode = currentNode.next;
-//   }
-//   currentNode = arr1.head;
-//   while (currentNode) {  //Big O is O(n)
-//     if (table[currentNode.value]) {
-//       resultList.insertEnd(currentNode.value);
-//     }
-//     currentNode = currentNode.next;
-//   }
-//   console.log(resultList);
-//   return resultList;
-// };
+};
