@@ -4,13 +4,14 @@ const solution = module.exports = {};
 
 
 solution.findNthNodeFromEnd = function(sll, n) {
-  if(n < 1 || typeof n !== 'number') return null;
+  if(n < 1) return null;
+  if(!n) return null;
 
   let revSll = solution.reverse(sll);
 
   let curr = revSll.head;
 
-  for(let i = 1; i < n; i ++) {
+  for(let i = 0; i < n; i ++) {
     curr = curr.next;
     if(!curr) return 'this node does not exist';
   }
@@ -23,6 +24,7 @@ solution.findNthNodeFromEnd = function(sll, n) {
 
 
 solution.reverse = function(sll) {
+  if(!sll || !Object.keys(sll).length) return null;
   let curr, nxt, prev;
 
   curr = sll.head;
