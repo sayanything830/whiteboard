@@ -1,0 +1,19 @@
+{
+  "name": "challenge-10",
+  "version": "1.0.0",
+  "description": "whiteboard challenge 10",
+  "main": "solution-one.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint ."
+  },
+  "author": "melanie",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
