@@ -2,8 +2,8 @@
 
 const solution = require('../lib/solution-two.js');
 
-describe('Solution Module', function() {
-  describe('#Solution', () => {
+describe('Solution Two Module', function() {
+  describe('#Solution Two', () => {
     let arr = [1, 2, 3, 4, 5];
     describe('Valid Arguments', () => {
       it('should return an object', () => {
