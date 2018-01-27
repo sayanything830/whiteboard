@@ -14,7 +14,7 @@
 ## Installing and Getting Started
 To install, fork and `git clone` this repository to your local computer from your terminal. Navigate to the `challenge-10` directory from your terminal and enter `npm install`, this will install all required dependencies. 
 
-To use solution one, navigate to the `solution-one` directory (`../challenge-10/solution-one`) and enter `node index.js` in the command line.
+To use solution one, navigate to the `solution-one` directory (`../challenge-10/solution-one`) and enter `node index.js <string>` in the command line, `<string>` is any string typed using single quotes.
 
 To use solution two, navigate to the `solution-two` directory (`../challenge-10/solution-two`) and enter `node index.js <number>` in the command line, `<number>` represents `n`.
 
@@ -23,7 +23,26 @@ To use solution two, navigate to the `solution-two` directory (`../challenge-10/
 ## Data Structures
 
 ### Solution One Module
-This module...
+This module contains a function with an arity of one, the valid argument is a string, and it will return `true` if the string contains a properly matched set of curly braces or `false` for an inproper match. The function splits the array and sends open braces to a stack, if the matching closing brace exists, it pops the top open brace. If stack is empty by the end of the string, the function returns `true`, if the stack has remaining open braces **_or_** more closing braces than open braces, it returns `false`.
+
+Examples:
+```javascript
+let strOne = '{}{}{{}}';
+let strTwo = '}{';
+
+solution.checkBraces(strOne);
+// returns true
+
+solution.checkBraces(strTwo);
+// returns false
+```
+Edge Case:
+```javascript
+let str = '';
+
+solution.checkBraces(str);
+// returns true
+```
 
 
 ---
@@ -67,6 +86,12 @@ solution(arrThree, 7); // returns {value: 7, index: 2}
 
 ### Solution One
 
+* Checks that valid input returns expected outcome:
+  * Should return true if braces match
+  * Should return false if braces do not match
+
+* Checks that invalid argument returns expected outcome:
+  * Should return null if argument data type is not a string
 
 ---
 
