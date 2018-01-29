@@ -1,0 +1,16 @@
+{
+  "name": "challenge-11",
+  "version": "1.0.0",
+  "description": "whiteboard challenge 11",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint ."
+  },
+  "author": "melanie",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
