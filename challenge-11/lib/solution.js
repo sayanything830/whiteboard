@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = function(arr) {
+module.exports = function(arr) { // Big O notation: O(n)
   if(!Array.isArray(arr)) return null;
 
   let sortArr = arr.sort((a, b) => a - b);
-  let missing = 0;
+  let missing;
 
   for(let i in sortArr) {
     if(sortArr[i] === sortArr[i-1]) return null;
@@ -13,7 +13,7 @@ module.exports = function(arr) {
     }
   }
 
-  if(missing === 0) return 'no missing numbers';
+  if(!missing) return 'no missing numbers';
   return missing;
 };
 
