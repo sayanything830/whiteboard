@@ -7,10 +7,10 @@ let sll = new SLL();
 
 sll.insertEnd(2);
 sll.insertEnd(2);
-sll.insertEnd(2);
 sll.insertEnd(3);
+sll.insertEnd(4);
 
-// console.log('linked list', sll);
-
-console.log(solution(sll));
+console.log('Original linked list: ', sll);
+console.log('');
+console.log('New linked list', solution(sll));
 
