@@ -5,6 +5,7 @@ const Nd = require('./node.js');
 class SLL {
   constructor() {
     this.head = null;
+    this.listLength = 0;
   }
 
   insertHead(val) { // Big O: O(1), creates a node, no iteration
@@ -12,7 +13,7 @@ class SLL {
     let nd = new Nd(val);
     nd.next = this.head;
     this.head = nd;
-    // this.listLength ++;
+    this.listLength ++;
     return this;
   }
 
@@ -21,12 +22,12 @@ class SLL {
     let nd = new Nd(val);
     if(!this.head) {
       this.head = nd;
-      // this.listLength ++;
+      this.listLength ++;
       return this;
     }
     for(var itr = this.head; itr.next; itr = itr.next);
     itr.next = nd;
-    // this.listLength ++;
+    this.listLength ++;
     return this;
   }
 }

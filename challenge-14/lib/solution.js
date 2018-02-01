@@ -8,6 +8,8 @@ const Stack = require('./stack.js');
 module.exports = function(sll) { // Big O notation: O(n)
   
   // Validation
+  if(!sll) return null;
+  if(typeof sll === 'number' || typeof sll === 'string') return null;
   if(sll.head === null) return null;
   if(sll.head.next === null) return sll;
 
