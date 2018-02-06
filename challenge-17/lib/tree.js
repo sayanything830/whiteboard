@@ -51,3 +51,4 @@ const K_ary = module.exports = class {
   }
 
 };
+module.exports = K_ary;
