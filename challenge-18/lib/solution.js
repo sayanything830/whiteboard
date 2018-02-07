@@ -13,7 +13,9 @@ tree.insert(7, 2);
 tree.insert(8, 3);
 
 
-module.exports = function(tree) {
+module.exports = function(tree) { // Big O notation: O(n)
+  if(!tree) return null;
+  if(typeof tree !== 'object') return null;
 
   let mostChildren = tree.root;
 
