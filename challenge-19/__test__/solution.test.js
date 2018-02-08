@@ -28,6 +28,10 @@ describe('Solution Module', function() {
       expect(solution(cedar).head.value).toEqual(1);
       expect(solution(cedar).head.next.value).toEqual(2);
     });
+    it('should list should have a length equal to number of leaves in tree', () => {
+      expect(solution(pine).length).toEqual(7);
+      expect(solution(cedar).length).toEqual(4);
+    });
   });
   describe('Invalid input', () => {
     it('should return null if no tree is passed', () => {
