@@ -1,6 +1,9 @@
 'use strict';
 
-module.exports = function high(string){
+module.exports = function high(string){ // Big O notation: O(n)
+  if(!string) return null;
+  if(typeof string !== 'string') return null;
+
   let words = string.split(' ');
   let max = 0;
   let result = '';
