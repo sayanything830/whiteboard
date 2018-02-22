@@ -1,7 +1,7 @@
 'use strict';
 
-const solution = require('./lib/soluton');
+const solution = require('./lib/solution');
 
-let array = ['cat', 'act', 'top', 'pot', 'two', 'tow', 'race'];
+let array = ['cat', 'race', 'act', 'top', 'pot', 'two', 'tow'];
 
 console.log(solution(array));
