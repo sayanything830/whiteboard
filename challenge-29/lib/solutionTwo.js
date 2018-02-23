@@ -1,5 +1,8 @@
 'use strict';
 
+const HashTable = require('./hash-table');
+let hashTable = new HashTable();
+
 module.exports = function(array) { // O(n)
   //Validators
   if(!array) return null;
@@ -12,17 +15,16 @@ module.exports = function(array) { // O(n)
   let table = {};
   let result = [];
 
-  let sortedWord = array.map(a => a.split('').sort().join(''));
-
-  for(let i in sortedWord) {
-    table[sortedWord[i]] ?
-      table[sortedWord[i]].push(array[i]) :
-      table[sortedWord[i]] = [array[i]];
-  }
+  array.map(value => {
+    let hash = hashTable.hashKey(value);
+    table[hash] ? table[hash].push(value) : table[hash] = [value];
+  });
 
   for(let property in table) {
-    result = result.concat(table[property]);
+    if(table[property]) {
+      result.push(table[property]);
+    }
   }
 
-  return result;
+  return result.reduce((a, b) => a.concat(b));
 };
