@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(arrOne, arrTwo) {
+module.exports = function(arrOne, arrTwo) { //Big O notation: O(n)
   // -- validate -- //
   if(!arrOne || !arrTwo) return null;
   if(!Array.isArray(arrOne) || !Array.isArray(arrTwo)) return null;
