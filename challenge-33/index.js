@@ -2,4 +2,4 @@
 
 const solution = require('./lib/solution');
 
-console.log(solution(2, 7));
+console.log(solution(-2, 7));

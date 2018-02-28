@@ -3,6 +3,7 @@
 module.exports = function (a, b) {
   // -- Validate -- //
   if(!a || !b) return null;
+  if(a < 0 || b < 0) return null;
   if(typeof a !== 'number' || typeof b !== 'number') return null;
 
   a = Math.floor(a);

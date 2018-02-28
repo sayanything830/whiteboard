@@ -13,4 +13,8 @@
 ## Tests
 
 Checks:
-  *
+  * Floating integers are valid arguments
+  * Returns a number
+  * Null for negative numbers
+  * Null for missing arguments
+  * Null for non-number arguments
