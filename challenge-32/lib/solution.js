@@ -11,13 +11,16 @@ module.exports = function(num) { // Big O notation: best: O(1), worst O(n)
   if(num === 1) return 0;
   if(num === 2) return 1;
 
-  let a = 1, b = 0, temp;
+  let a = 0, b = 0, temp;
 
   while(num >= 0) {
     temp = a;
     a = a + b;
     b = temp;
     num --;
+    if(a === 0) {
+      b = 1;
+    }
   }
 
   return b;
