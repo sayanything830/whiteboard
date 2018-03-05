@@ -1,6 +1,6 @@
 'use strict';
 
-const isStructureIdentical = module.exports = function(tOne, tTwo) {
+const isStructureIdentical = module.exports = function(tOne, tTwo) { // Big O notation: O(n)
   // -- validate -- //
   if(typeof tOne === 'number' || typeof tOne === 'string' || Array.isArray(tOne)) return null;
   if(typeof tTwo === 'number' || typeof tTwo === 'string' || Array.isArray(tTwo)) return null;
