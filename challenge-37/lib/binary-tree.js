@@ -27,7 +27,6 @@ class BinaryTree{
     // visit left
     this._inOrderTraversal(root.left);
     // visit root
-    console.log(`Visiting ${root.value}`);
     this.inOrderArr.push(root.value);
     //visit right
     this._inOrderTraversal(root.right);

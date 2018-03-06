@@ -40,7 +40,8 @@ nine.right = eleven;
 
 eleven.right = twelve;
 
-// console.log('solution tree one', solution(treeOne));
-// console.log('solution tree one', solution(treeTwo));
-console.log('should not work', solution({}));
+console.log('solution tree one', solution(treeOne));
+console.log('solution tree one', solution(treeTwo));
+console.log('solution tree one', solution(treeThree));
+// console.log('should not work', solution({}));
 
