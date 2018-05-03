@@ -5,32 +5,44 @@ class Document {
     this.text = text;
   }
 
-commonPhrase() {
-  // make everything lowercase --This is important!!--
-  this.text = this.text.toLowerCase();
+  commonPhrase() {
 
-  // turn text into array of sentences
-  this._makeSentenceArray(this.text);
+    // validators
+    if(!this.text || typeof this.text !== 'string') return null;
 
-  // map out each possible phrase in the array of sentences
-  this._createPhraseMap(this.paragraph);
+    // make everything lowercase --This is important!!--
+    this.text = this.text.toLowerCase();
 
-  // get the number for each time a phrase occurred
-  this._getMapValues(this.map);
+    // turn text into array of sentences
+    this._makeSentenceArray(this.text);
 
-  this.lowEndOccurrence = (!this.values[9] || this.values[9] === 1) ? 2 : this.values[9];
-  // this evaluates if there are at least 9 phrases and that they occur more than once
-  // otherwise assign to the 10th highest occurrence
+    // map out each possible phrase in the array of sentences
+    this._createPhraseMap(this.paragraph);
 
-  // get the phrases that occurred at least twice
-  this._getPhrases(this.map);
+    // get the number for each time a phrase occurred
+    this._getMapValues(this.map);
 
-  this._createPhraseMap(this.phrases);
+    this.lowEndOccurrence = (!this.values[9] || this.values[9] === 1) ? 2 : this.values[9];
+    // this evaluates if there are at least 9 phrases and that they occur more than once
+    // otherwise assign to the 10th highest occurrence
 
-  this._getTopPhrases(this.map);
+    // get the phrases that occurred at least twice
+    this._getPhrases(this.map);
 
-  return this.phrases;
-}
+    // repeating hashmap process over each phrase to find substring phrases
+    this._createPhraseMap(this.phrases);
+
+    // get only the phrases that unique, not substrings of another phrase
+    this._getUniquePhrases(this.map);
+
+    // if there are more than 10 phrases, only return the first ten
+    if(this.phrases.length > 10) {
+      this.phrases = this.phrases.slice(0, 10);
+    }
+    return this.phrases;
+  }
+
+  // ---- Helper Functions ---- //
 
   // returns array of sentences
   _makeSentenceArray(str) {
@@ -40,7 +52,7 @@ commonPhrase() {
   // create map of all phrases within string
   _createPhraseMap(paragraph) {
     this.map = {};
-      // poor Big O notation, but gets job done for now
+    // poor Big O notation, but gets job done for now
     for(let sentence of paragraph) {
       // array of each word per sentence
       this.words = sentence.match(/\w+/g);
@@ -48,7 +60,7 @@ commonPhrase() {
       // starting with first word
       for(let i = 0; i < this.words.length; i ++) {
         // and continuing to 3rd to 10th word in string
-        for(let j = i + 2; j < this.words.length && j < 10; j++) {
+        for(let j = i + 2; j < this.words.length && j <= i + 9; j++) {
           this.currentPhrase = this.words.slice(i, j + 1).join(' ');
 
           // add phrase as property to map if it doesn't already exist
@@ -75,7 +87,8 @@ commonPhrase() {
     });
   }
 
-  _getTopPhrases(object) {
+  // returns filtered array with only unique phrases, no substrings of another phrase
+  _getUniquePhrases(object) {
     this.phrases = Object.keys(object).filter(phrase => {
       if(this.map[phrase] === 1) {
         return phrase;
