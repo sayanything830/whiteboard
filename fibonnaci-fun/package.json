@@ -1,0 +1,18 @@
+{
+  "name": "fibonnaci-fun",
+  "version": "1.0.0",
+  "description": "find nth value in fibonnaci sequence",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "Melanie Downing",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "jest": "^23.0.1"
+  }
+}
