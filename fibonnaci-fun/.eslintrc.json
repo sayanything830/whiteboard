@@ -13,7 +13,7 @@
     "next": true
   },
   "parserOptions": {
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
     "sourceType": "module",
     "ecmaVersion": 6,
     "ecmaFeatures": {
