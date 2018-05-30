@@ -7,7 +7,7 @@ describe('Find Nth Element in Fibonacci Sequence Iteratively', function() {
   describe('Valid Arguments', () => {
     it('should return nth number in sequence', () => {
       expect(fibFindN(1)).toEqual(0);
-      expect(fibFindN(5)).toEqual(3);
+      expect(fibFindN(10)).toEqual(34);
     });
   });
   describe('Invalid Arguments', () => {
