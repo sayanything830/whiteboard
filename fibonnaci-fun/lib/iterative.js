@@ -1,6 +1,6 @@
 'use strict';
 
-const fibFindN = (n) => {
+module.exports = (n) => {
   // Validate //
   if(!n) return 'Error, missing argument';
   if(n <= 0) return 'Error, needs to be greater than zero';
