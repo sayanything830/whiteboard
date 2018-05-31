@@ -10,5 +10,8 @@
     "test": "jest --verbose"
   },
   "author": "Melanie Downing",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^23.1.0"
+  }
 }

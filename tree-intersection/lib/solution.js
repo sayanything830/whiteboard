@@ -2,6 +2,9 @@
 
 // Function that takes in two trees and returns a set of values found in both trees
 const findMatch = (tree1, tree2) => {
+  // Validate trees
+  if(!tree1 || !tree2) return null;
+  if(!tree1.root || !tree2.root) return null;
   // traverse both trees and push all values to an array
   const arr1 = tree1.inOrderTraversal();
   const arr2 = tree2.inOrderTraversal();
